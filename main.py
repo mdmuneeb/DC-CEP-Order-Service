@@ -13,6 +13,7 @@ DATABASE_URL = os.getenv("OrderServiceDeployed")
 # DATABASE_URL = os.getenv("OrderServiceLocal")
 
 PRODUCT_SERVICE = "https://dc-cep-product-service-production.up.railway.app"
+# USER_SERVICE = "https://dc-cep-user-service-production.up.railway.app"
 
 
 app = FastAPI()
@@ -58,7 +59,7 @@ def create_order(order: OrderCreate):
         product_id = item.product_id
         quantity = item.quantity
 
-        response = requests.get(f"{PRODUCT_SERVICE}/{product_id}")
+        response = requests.get(f"{PRODUCT_SERVICE}/products/{product_id}")
         product = response.json()
 
         if "error" in product:
