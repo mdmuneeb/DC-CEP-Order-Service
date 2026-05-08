@@ -12,6 +12,8 @@ load_dotenv()
 DATABASE_URL = os.getenv("OrderServiceDeployed")
 # DATABASE_URL = os.getenv("OrderServiceLocal")
 
+PRODUCT_SERVICE = "https://dc-cep-product-service-production.up.railway.app"
+
 
 app = FastAPI()
 app.add_middleware(
@@ -56,7 +58,7 @@ def create_order(order: OrderCreate):
         product_id = item.product_id
         quantity = item.quantity
 
-        response = requests.get(f"http://localhost:8002/products/{product_id}")
+        response = requests.get(f"{PRODUCT_SERVICE}/{product_id}")
         product = response.json()
 
         if "error" in product:
