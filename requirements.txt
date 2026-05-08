@@ -1,0 +1,9 @@
+fastapi 
+uvicorn 
+pyodbc 
+sqlalchemy
+requests
+email-validator
+
+streamlit
+python-dotenv
