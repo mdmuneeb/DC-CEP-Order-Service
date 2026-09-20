@@ -14,10 +14,10 @@ load_dotenv()
 DATABASE_URL = os.getenv("OrderServiceDeployed")
 # DATABASE_URL = os.getenv("OrderServiceLocal")
 
-PRODUCT_SERVICE = "https://dc-cep-product-service-production-f1dc.up.railway.app"
+PRODUCT_SERVICE = "https://dc-cep-product-service-production-d3f9.up.railway.app"
 # PRODUCT_SERVICE = "http://localhost:8002"
 
-USER_SERVICE = "https://dc-cep-user-service-production-37e1.up.railway.app"
+USER_SERVICE = "https://dc-cep-user-service-production-49c8.up.railway.app"
 # USER_SERVICE = "http://localhost:8001"
 
 app = FastAPI()
